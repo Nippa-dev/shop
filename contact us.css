@@ -1,0 +1,299 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body
+{
+	width: 100%;
+	height: 100vh;
+}
+
+/*  navigation Bar  */
+
+.banner
+{
+	width: 100%;
+	height: 100vh;
+	background-color: black;
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar
+{
+	width: 85%;
+	margin: auto;
+	padding: 35px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.name
+{
+	color: white;
+	font-family: sans-serif;
+	font-size: 30px;
+}
+
+.name:hover
+{
+	-ms-transform: scale(1.1);
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+}
+
+
+
+.navbar ul li
+{
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+	position: relative;
+}
+.navbar ul li a 
+{
+	text-decoration: none;
+	color: white;
+	font-family: sans-serif;
+}
+.navbar ul li::after
+{
+	content: '';
+	height: 3px;
+	width: 0;
+	background: #ffc107;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.5s;
+}
+.navbar ul li:hover::after
+{
+	width: 100%;
+
+}
+
+
+
+/*  contact us form */
+
+.container
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 20px 100px;
+}
+
+.container:after
+{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	background-size: cover;
+	z-index: -1;
+}
+
+.contact-box
+{
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+}
+
+.left
+{
+	height: 100%;
+	background: url(watch1.gif) no-repeat center;
+	background-size: cover;
+}
+.right
+{
+	padding: 25px 40px;
+}
+
+h2
+{
+   position: relative;
+   padding-bottom: 10px;
+   margin-bottom: 10px;
+}
+
+
+h2:after
+{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #e6b800;
+}
+
+
+.field
+{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+	border-radius: 10px;
+}
+
+
+.field:hover
+{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+textarea
+{
+	min-height: 150px;
+}
+
+
+.btn
+{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: black;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+
+.btn:hover
+{
+    background-color: #e6b800;
+}
+
+
+.field:focus
+{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+
+@media screen and (max-width: 880px)
+{
+	.contact-box
+	{
+		grid-template-columns: 1fr;
+	}
+	.left
+	{
+		height: 200px;
+	}
+}
+
+
+.footer 
+{
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  margin-top: 200px;
+  background-color: grey;
+}
+
+.zoom3 /* footer social media  */
+{
+   padding: auto;
+   transition: transform .3s;
+   width: 28px;
+   height: 28px;
+   margin: 0 auto;
+}
+
+.zoom3:hover /* footer social media  */
+{
+   -ms-transform: scale(1.8); 
+   -webkit-transform: scale(1.8); 
+   transform: scale(1.8);
+}
+
+
+
+.loader_bg
+{
+    position: fixed;
+    z-index: 999999;
+    background: black;
+    width: 100%;
+    height: 100%;
+}
+
+
+.loader
+{
+    border: 0 soild transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+
+
+.loader:before, .loader:after
+{
+    content: '';
+    border: 1em solid #e6b800;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+
+
+.loader:before
+{
+    animation-delay: .5s;
+}
+@keyframes loader
+{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
